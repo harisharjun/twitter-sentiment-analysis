@@ -9,7 +9,6 @@ consumer_secret = 'xxxxxxx'
 access_token='xxxxxxx'
 access_token_secret='xxxxxxx'
 
-
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
@@ -23,7 +22,6 @@ def decode_bmp(text):
     return item
 
 #Sentiment Analysis using TextBlob
-
 def tweets_sentiment_count(tweets_analysis):    
     count_positive=0
     count_negative=0
