@@ -59,7 +59,7 @@ def get_min_id(public_tweets):
     return min(dict1.values())
 
 #The Main Program
-count=int(input("Enter Count: "))
+count=int(input("Enter the number of tweets you wish to analyse(keep it below 5000): "))
 movie_name=input("Enter Movie Hashtag: ")
 temp=0
 last_tweet_id=""
@@ -93,8 +93,6 @@ while temp<count:
                 public_tweets[i.id_str]=i.full_text
             temp+=100
             last_tweet_id=get_min_id(public_tweets)
-
-#print(len(public_tweets))
 
 tweets_dict={}
 i=1
