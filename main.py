@@ -1,6 +1,5 @@
 #Importing Libraries required to run this program
 import tweepy
-import sys
 from textblob import TextBlob
 
 #Assign keys required to access the Twitter API
@@ -13,12 +12,6 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
-
-#Function to print BMP Characters - not used in this program though
-def decode_bmp(text):
-    non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
-    item=text.translate(non_bmp_map)+'\n\n'
-    return item
 
 #Sentiment Analysis using TextBlob
 def tweets_sentiment_count(tweets_analysis):    
@@ -55,7 +48,7 @@ def get_min_id(public_tweets):
         dict1[i]=i
     return min(dict1.values())
 
-#The Main Program
+#The Main Program:
 count=int(input("Enter the number of tweets you wish to analyse(keep it below 5000): "))
 movie_name=input("Enter Movie Hashtag: ")
 temp=0
